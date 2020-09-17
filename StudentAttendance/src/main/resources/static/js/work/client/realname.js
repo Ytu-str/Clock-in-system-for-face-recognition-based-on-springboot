@@ -31,12 +31,12 @@ $('#realname-message-btn').click(function() {
 					$('.realname-success h2').text('实名成功,' + (num--) + '秒后跳转到首页');
 					if(num === 0) {
 						clearInterval(jishi);
-						window.location.href = "https://www.shineqianmo.com./index";
+						window.location.href = "http://localhost:8080/index";
 					}
 				}, 1000);
 			} else {
 				alert('实名失败');
-				window.location.href = "https://www.shineqianmo.com/realname";
+				window.location.href = "http://localhost:8080/realname";
 			}
 		},
 		error: function(e) {
@@ -71,7 +71,7 @@ $.ajax({
 	success: function(res){
 		if(res) {
 			alert("已经实名")
-			window.location.href = "https://www.shineqianmo.com/index";
+			window.location.href = "http://localhost:8080/index";
 		}
 	},
 	error: function(e){

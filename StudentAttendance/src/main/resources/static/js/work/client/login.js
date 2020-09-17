@@ -17,7 +17,7 @@ function hideURLbar() {
             data:{'name': usr,'password': pass},
             success :function(data) {
                 if(data === 1){
-                    window.location.href="https://www.shineqianmo.com/index";
+                    window.location.href="http://localhost:8080/index";
                 }else if (data === 3) {
                     alert('用户不存在')
                 } else if (data === 2){

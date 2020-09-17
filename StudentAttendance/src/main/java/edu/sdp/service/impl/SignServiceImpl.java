@@ -46,6 +46,7 @@ public class SignServiceImpl implements SignService {
 
     @Override
     public void deletSign(String user_id) {
+        System.out.println(user_id);
         signDao.deletSignMapper(user_id);
     }
 

@@ -31,7 +31,7 @@ function s_d(page) {
 			//点击进入邮件 详情页
 			$('.inbox-click').click(function() {
 				var inbox_id = $(this).attr('inbox-id');
-				window.open("https://www.shineqianmo.com/inboxParticulars?inboxId=" + inbox_id);
+				window.open("http://localhost:8080/inboxParticulars?inboxId=" + inbox_id);
 			});
 		},
 		error: function(e) {

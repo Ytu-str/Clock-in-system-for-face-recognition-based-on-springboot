@@ -49,7 +49,7 @@ $('#changPassword-btn').click(function () {
 			data:{'userNumber': userNumber, "userAnswer": useran, "userPass": userpass},
 			success :function(res) {
 				alert("修改成功!");
-				window.location.href = "https://www.shineqianmo.com/login";
+				window.location.href = "http://localhost:8080/login";
 			},
 			error :function(e) {
 				alert("出现错误");

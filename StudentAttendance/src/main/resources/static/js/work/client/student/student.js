@@ -39,7 +39,7 @@ function searchStudent() {
 				$('#stuClass').val(res['userClass']);
 			} catch {
 				alert('您还没有完善信息哦，抓紧去完善信息吧');
-				window.location.href="https://www.shineqianmo.com/personal"
+				window.location.href="http://localhost:8080/personal"
 			}
 		},
 		error: function(e) {
@@ -74,7 +74,7 @@ $('#add-class-btn').click(function() {
 		success:function(res) {
 			if(res) {
 				alert('成功加入');
-				window.location.href = "https://www.shineqianmo.com/index";
+				window.location.href = "http://localhost:8080/index";
 			} else {
 				alert('加入失败');
 			}

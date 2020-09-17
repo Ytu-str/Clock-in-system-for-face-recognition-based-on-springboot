@@ -244,7 +244,7 @@ function send_data(page) {
 			}
 			$('.card').click(function() {
 				var clsId = $(this).attr('teacher-id');
-				window.open("https://www.shineqianmo.com/classSign?clsId=" + clsId);
+				window.open("http://localhost:8080/classSign?clsId=" + clsId);
 			})
 		},
 		error: function(e) {

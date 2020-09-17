@@ -121,7 +121,7 @@ public class CurriculumServiceImpl implements CurriculumService {
         HSSFWorkbook workbook = new HSSFWorkbook();
         HSSFSheet sheet = workbook.createSheet();
         int rowNum = 0;
-        String[] headers = {"姓名", "学号", "班级", "时间"};
+        String[] headers = {"姓名", "学号","系别", "班级", "时间"};
         HSSFRow row = sheet.createRow(rowNum);
         for (int i = 0; i < headers.length; i++) {
             HSSFCell cell = row.createCell(i);

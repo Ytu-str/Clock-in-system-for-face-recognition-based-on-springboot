@@ -33,7 +33,7 @@ function tishi2(){
 	$("#flag").html("请正视摄像头")
 }
 function tishi3(){
-	window.location.href="https://www.shineqianmo.com/index";
+	window.location.href="http://localhost:8080/index";
 }
 function openMedia() {
 	let constraints = {
@@ -86,7 +86,7 @@ function takePhoto() {
 				}
 			}
 			if(data.score.substr(0,2)>80){
-				window.location.href="https://www.shineqianmo.com/login/facesucceed"
+				window.location.href="/login/facesucceed"
 			}
 
 		}

@@ -91,7 +91,7 @@ $('#registerPass').click(function () {
         success :function(res) {
             alert(res);
             if (res == "注册成功") {
-                window.location.href = "https://www.shineqianmo.com/login";
+                window.location.href = "http://localhost:8080/login";
             }
         },
         error :function(e) {

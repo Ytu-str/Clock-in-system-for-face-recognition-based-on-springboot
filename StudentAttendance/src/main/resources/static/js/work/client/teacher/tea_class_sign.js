@@ -159,5 +159,5 @@ $.ajax({
 });
 $('#t-record').click(function () {
     var clsId = getUrlParam("clsId");
-    window.open("https://www.shineqianmo.com/exportData?clsId=" + clsId);
+    window.open("http://localhost:8080/exportData?clsId=" + clsId);
 });

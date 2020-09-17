@@ -51,5 +51,5 @@ $(window).bind('scroll',function(){
 
 //个人信息
 $('#my-message').click(function() {
-    window.location.href = "https://www.shineqianmo.com/personal";
+    window.location.href = "http://localhost:8080/personal";
 });
