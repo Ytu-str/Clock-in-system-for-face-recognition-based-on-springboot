@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sdp.dao.CurriculumDao">
+    <resultMap id="searchclass" type="edu.sdp.vo.StudentClass">
+        <result column="cname" property="clsName"/>
+        <result column="cs" property="cls"/>
+        <result column="cphoto" property="clsPhoto"/>
+        <result column="uname" property="userName"/>
+    </resultMap>
+
+  <select id="SearchClassMapper" resultMap="searchclass">
+    SELECT c.cls_name cname,c.cls cs,c.cls_photo cphoto, u.user_name uname,u.user_id userId,c.cls_id clsId
+    FROM curriculum c,myclass m ,user u
+    WHERE m.mcls_class=c.cls_id and m.mcls_name=#{stu_id} and c.cls_ascription=u.user_id
+    LIMIT ${(num-1)*classNum},${classNum};
+  </select>
+
+    <insert id="joinClassMapper" parameterType="String">
+        insert into myclass (mcls_name,mcls_class) value (#{id},#{cls_id});
+    </insert>
+
+    <select id="SearchTeacherClassMapper" resultType="edu.sdp.vo.TeacherClass">
+        SELECT cls_name,cls,cls_photo ,cls_id
+        FROM curriculum
+        WHERE cls_ascription=#{id}
+        LIMIT ${(num-1)*classNum},${classNum};
+    </select>
+
+    <select id="existenceClassMapper" parameterType="String" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM myclass WHERE mcls_class=#{cls_id} AND  mcls_name=#{id};
+    </select>
+
+    <select id="selectIsThereAnyClassMapper" parameterType="String" resultType="java.lang.Integer">
+        select COUNT(*) from curriculum where cls_id=#{cls_id};
+    </select>
+
+    <select id="searchTeacherClassInformationMapper" parameterType="String" resultType="edu.sdp.vo.TeacherClass">
+        select count(m.mcls_class)as num,c.cls_name clsName,c.cls cls,c.cls_photo clsPhoto,c.cls_id clsId
+        from curriculum c,myclass m where c.cls_id=#{id} and m.mcls_class=#{id};
+    </select>
+
+    <select id="classNumCountMapper" resultType="java.lang.Integer">
+        select COUNT(*) from myclass where mcls_name=#{id};
+    </select>
+
+    <select id="exportDataMapper" resultType="edu.sdp.vo.ExportData">
+        SELECT us.user_name as userName,us.user_stunum as userStunum,d.user_system as userSystem,c.user_class as userClass,t.tsign_start_date as time
+        FROM user us,signtask t,unsign u,class c,department d
+        WHERE t.tsign_class_id=#{id} and t.tsign_uid=u.unsign_id and u.unsign_name=us.user_id and c.class_id = us.user_class and d.user_uid=us.user_system;
+    </select>
+
+    <select id="selectClsName" resultType="java.lang.String">
+        select cls_name from curriculum where cls_id=#{id};
+    </select>
+
+    <insert id="creatingCoursesMapper">
+        insert into curriculum (cls_id,cls_name,cls_date,cls_ascription,cls,cls_photo)
+        values (#{clsId},#{name},#{timeStamp},#{id},#{cls},#{photoUrl});
+    </insert>
+
+    <insert id="insterMyclass">
+        insert into myclass (mcls_name,mcls_class) values (#{id},#{clsId});
+    </insert>
+</mapper>
