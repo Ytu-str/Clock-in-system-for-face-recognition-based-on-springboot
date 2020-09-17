@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>实名注册</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/client/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/client/realname.css"/>
+		<script src="../js/plug/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/plug/wow.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new WOW().init();
+		</script>
+	</head>
+	<body>
+		<!--
+        	作者：ShineQianMo
+        	时间：2020-06-04
+        	描述：导航
+        -->
+		<nav id="navbar" class="navbar navbar-light bg-dark">
+			<img class="navbar-image" src="../images/icon.png"/>
+			<span class="navbar-brand mb-0 h1">Attendance</span>
+		</nav>
+		<!--
+        	作者：ShineQianMo
+        	时间：2020-06-04
+        	描述：实名
+        -->
+        <div class="realname">
+        	<div class="top">
+        		<ul>
+        			<li class="circle circle-1 active">1</li>
+        			<li class="wire"></li>
+        			<li class="circle circle-2">2</li>
+        			<li class="wire"></li>
+        			<li class="circle circle-3">3</li>
+        		</ul>
+        	</div>
+        	<div class="down">
+        		<!--
+        		        	作者：ShineQianMo
+        		        	时间：2020-06-04
+        		        	描述：大头照
+        		        -->
+        		<div class="Big-head-photos wow zoomIn" data-wow-duration="0.5s">
+					<a href="javascript:;" class="file">
+			        	<img id="showPicture" height="100" src="../images/dtz.jpg">
+						<input id="file" type="file" name="user_portrait" required=""/>
+			       </a>
+			       <br />
+			       <center><button id="big-head-btn" type="button" class="btn btn-purple btn-margin">确  定</button></center>
+				</div>
+				<!--
+        			作者：ShineQianMo
+        			时间：2020-06-04
+        			描述：身份证信息
+        		-->
+        		<div class="realname-message wow zoomIn" data-wow-duration="0.5s">
+        			<div>
+        				<label for="exampleInputEmail1">姓名:</label>
+        				<input id="name" type="text" class="form-control" placeholder="请输入您的姓名" aria-label="Username" aria-describedby="basic-addon1">
+        			</div>
+        			<div>
+        				<label for="exampleInputEmail1">身份证号:</label>
+        				<input id="identity" type="number" class="form-control" placeholder="请输入您的身份证号" aria-label="UserIdentity" aria-describedby="basic-addon1">
+        			</div>
+        			<center><button id="realname-message-btn" type="button" class="btn btn-purple">确  定</button></center>
+        		</div>
+				<!--
+        			作者：ShineQianMo
+        			时间：2020-06-04
+        			描述：实名成功
+        		-->
+        		<div class="realname-success wow zoomIn" data-wow-duration="0.5s">
+        			<center><img src="../images/realname.png"/></center>
+					<center><h2></h2></center>
+				</div>
+        	</div>
+        </div>
+		
+		
+		<script src="../js/work/client/realname.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

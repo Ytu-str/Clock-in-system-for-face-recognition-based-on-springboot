@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	background-color: #F6F6F6;
+}
+
+iframe {
+	border: none;
+}
+
+.navbar-bg {
+	height: 115px;
+	width: 100%;
+	background-color: #BA55D3;
+}
+
+.main-content {
+	width: 90%;
+	margin: auto;
+}
+
+.navbar-text {
+	margin-top: 10px;
+	margin-left: 30px;
+	text-decoration: none;
+	font-size: 32px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-family: 'Montserrat';
+	font-weight: 700;
+	color: #000;
+}
+
+.h-header {
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 40px rgba(0,0,0,.05);
+	box-shadow: 0 0 40px rgba(0,0,0,.05);
+	border-radius: 3px;
+	padding: 20px;
+	margin: -40px 0 20px 0;
+	display: inline-block;
+	width: 100%;
+	font-family: 'Montserrat';
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.h-header div {
+	font-size: 24px;
+	margin-top: 3px;
+	float: left;
+}
+
+.card-text-height {
+	height: 5rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#broken-line {
+	height: 500px;
+}
+
+#no-sign-table {
+	height: 500px;
+	overflow: auto;
+}
+.textarea-h {
+	height: 300px;
+	padding: .3rem;
+}
+
+.dropdown-menu a {
+	font-size: 15px;
+	cursor: pointer;
+}

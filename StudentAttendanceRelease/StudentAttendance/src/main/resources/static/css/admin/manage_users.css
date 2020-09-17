@@ -1,0 +1,68 @@
+.user-operation {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+#all-user tbody tr,#all-user thead tr {
+	text-align: center;
+	line-height: 40px
+}
+
+.table-s {
+	border: 1px solid #000000;
+	border-radius: .5rem;
+}
+
+.btn-purple {
+	line-height: 1;
+	background-color: #BA55D3;
+	color: #FFFFFF;
+	border-color: #BA55D3;
+	opacity: .9;
+}
+
+.btn-purple:hover {
+	opacity: 1;
+}
+
+.search-user {
+	width: 50%;
+	line-height: 1;
+	display: flex;
+	justify-content: space-between;
+	float: right;
+}
+
+.select-w {
+	width: 45%;
+}
+
+.btn-purplee {
+	background-color: #BA55D3;
+	color: #FFFFFF;
+	border-color: #BA55D3;
+}
+
+.btn-purplee:hover {
+	opacity: .9;
+}
+
+.page {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.replenish-none {
+	height: 32.4px;
+	width: 20%;
+	display: inline-block;
+}
+
+.content-panel {
+	text-align: center;
+}
+
+.opacity-1 {
+	opacity: 0;
+}

@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar {
+	height: 80px;
+	width: 100%;
+}
+
+#navbar span {
+	font: 30px/25px 'Glegoo', serif;
+	color: #BA55D3;
+	cursor: pointer;
+}
+
+.realname {
+	width: 100%;
+	height: 700px;
+	background-color: #EEEEEE;
+}
+
+.top{
+	width: 100%;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top ul li {
+	display: inline-block;
+}
+
+.circle {
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+	line-height: 28px;
+	border-radius: 50%;
+	border: 1px solid #CCCCCC;
+	color: #CCCCCC;
+	position: relative;
+}
+
+.wire {
+	width: 15rem;
+	height: 5px;
+	margin: 0 1rem;
+	background: #CCCCCC;
+	
+}
+
+.active {
+	color: #FFFFFF;
+	background-color: #BA55D3;
+}
+
+.active:after {
+	color: #BA55D3;
+}
+
+.circle-1:after {
+	content: "大头照" ;
+	width: 4rem;
+	position: absolute;
+	top: 110%;
+	right: -60%;
+}
+
+.circle-2:after {
+	content: "填写信息" ;
+	width: 4rem;
+	position: absolute;
+	top: 110%;
+	right: -60%;
+}
+
+.circle-3:after {
+	content: "实名成功" ;
+	width: 4rem;
+	position: absolute;
+	top: 110%;
+	right: -60%;
+}
+
+.down {
+	width: 70%;
+	height: 400px;
+	margin-left: 15%;
+	background-color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: static;
+}
+
+.file {
+	position: relative;
+	display: inline-block;
+	padding: 4px 12px;
+	overflow: hidden;
+	line-height: 20px;
+}
+
+.file input {
+	position: absolute;
+	font-size: 100px;
+	right: 0;
+	top: 0;
+	opacity: 0;
+}
+
+.btn-purple {
+	color: #BA55D3;
+	border-color: #BA55D3;
+}
+
+.btn-margin {
+	margin-top: 100%;
+}
+
+.btn-purple:hover {
+	color: #FFFFFF;
+	background-color: #BA55D3;
+}
+
+.realname-message {
+	width: 70%;
+	display: none;
+}
+
+.realname-message div {
+	margin: 2rem 0;
+}
+
+.realname-success {
+	display: none;
+}
+
+

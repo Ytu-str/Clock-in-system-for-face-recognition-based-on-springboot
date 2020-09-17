@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sdp.dao.SignDao">
+    <insert id="signMapper" parameterType="edu.sdp.vo.Sign">
+        insert into sign (sign_id,sign_name,sign_time,scla_id)
+        value(#{sign.signId},#{sign.signName},#{sign.signTime},#{sign.sclaId});
+    </insert>
+
+    <delete id="deletSignMapper" parameterType="String">
+        delete from unsign where unsign_name=#{user_id}
+    </delete>
+
+    <delete id="deleteFail" parameterType="String">
+        delete user_name,user_identity from user where user_id=#{user_id}
+    </delete>
+
+    <select id="signNumMapper" parameterType="String" resultType="edu.sdp.vo.SignNum">
+        SELECT COUNT(u.unsign_id) as unSignNum,
+        (SELECT COUNT(1) from sign s,signtask t WHERE t.tsign_uid=s.scla_id and t.tsign_start_date=#{time})as SignNum
+        FROM unsign u,signtask t
+        WHERE t.tsign_class_id=#{signId}
+        and t.tsign_uid=u.unsign_id
+        and t.tsign_start_date=#{time};
+    </select>
+
+    <insert id="issueSignInMapper" parameterType="edu.sdp.vo.SignTask">
+        insert into signtask (tsign_uid,tsign_start_date,tsign_end_date,tsign_class_id,tsign_state)
+        value (#{tsignUid},#{tsignStartDate},#{tsignEndDate},#{tsignClassId},#{tsignState})
+    </insert>
+
+    <select id="joinClassStudentId" parameterType="String" resultType="java.lang.String">
+        select mcls_name from myclass where mcls_class=#{id};
+    </select>
+
+
+    <insert id="addunsignMapper">
+      insert into unsign (unsign_id,unsign_name) value (#{sign_id},#{id});
+    </insert>
+
+
+
+    <update id="ChangeStatus">
+        update signtask set tsign_state=0 where tsign_uid=#{id};
+    </update>
+
+    <select id="selectContent" parameterType="String" resultType="java.lang.String">
+        select c.cls_name
+        FROM user u,curriculum c
+        WHERE c.cls_id=#{uuid} AND c.cls_ascription=u.user_id;
+    </select>
+
+    <select id="selecSevenTime" resultType="java.lang.String">
+        SELECT tsign_start_date FROM signtask WHERE tsign_class_id=#{id} ORDER BY tsign_start_date desc LIMIT 7;
+    </select>
+
+    <select id="PersonnelListMapper" resultType="edu.sdp.vo.PersonnelList">
+        SELECT us.user_name as userName,us.user_stunum as userStunum
+        FROM user us,unsign u,signtask t
+        WHERE u.unsign_name=us.user_id
+        AND u.unsign_id=t.tsign_uid
+        AND t.tsign_class_id=#{id}
+        AND t.tsign_start_date=(SELECT tsign_start_date FROM signtask ORDER BY tsign_start_date desc LIMIT 1)
+    </select>
+
+    <select id="CheckInStatusMapper" resultType="edu.sdp.vo.SignTask">
+        select t.tsign_uid tsignUid,t.tsign_class_id tsignClassId
+        from signtask t,myclass m
+        where m.mcls_name=#{id} and m.mcls_class=t.tsign_class_id and t.tsign_state=1;
+    </select>
+
+</mapper>

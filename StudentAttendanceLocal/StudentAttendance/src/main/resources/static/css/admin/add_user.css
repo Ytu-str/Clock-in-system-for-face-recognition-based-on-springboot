@@ -1,0 +1,62 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.add-option {
+	height: 400px;
+	display: flex;
+	justify-content: space-around;
+	margin-top: 100px;
+}
+
+.add-option li {
+	display: inline-block;
+}
+
+.card {
+	width: 20rem;
+	height: 400px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: .5rem;
+	transition: all linear .3s;
+	opacity: .8;
+}
+
+.card:hover {
+	opacity: 1;
+}
+
+#alone-add {
+	background-color: #28a745;
+}
+
+#batch-add {
+	background-color: #FFCF00;
+}
+
+.card-body i {
+	margin-top: 4rem;
+	color: #FFFFFF;
+}
+
+.card-body h4 {
+	color: #FFFFFF;
+	margin-top: 2rem;
+}
+
+.add-content {
+	width: 90%;
+	height: 400px;
+	display: none;
+	margin-left: 5%;
+}
+
+#alone-content {
+	background-color:;
+}
+
+#batch-content {
+	background-color: green;
+}

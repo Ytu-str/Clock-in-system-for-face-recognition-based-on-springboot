@@ -1,0 +1,1049 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#pname{
+	font: 30px/25px 'Glegoo', serif;
+}
+.navbar {
+	height: 6rem;
+	padding: 0 16px;
+	color: #fff;
+}
+
+.text-black {
+	color: black !important;
+}
+
+#sign h2 span {
+	font-size: 18px;
+	letter-spacing: .1rem;
+	float: right;
+	margin-top: 5%;
+}
+
+@media screen and (max-width: 480px) {
+	.banner {
+		width: 100%;
+		height: 400px;
+	}
+	
+	.carousel-item img {
+		width: 100%;
+		height: 400px!important;
+	}
+	
+	.inspirational {
+		width: 100%;
+		height: 1050px;
+	}
+	
+	.inspirational-left {
+		width: 100%;
+		height: 350px;
+	}
+	
+	.inspirational-left img {
+		width: 100%;
+		height: 350px;
+	}
+	
+	.inspirational-center {
+		width: 100%;
+		height: 350px;
+		background-color: #404040;
+	}
+	
+	.inspirational-right{
+		width: 100%;
+		height: 350px;
+		background-color: pink;
+	}
+	
+	.inspirational-right img:first-child{
+		width: 20%;
+		height: 40%;
+		margin-left: 40%;
+		margin-top: 2%;
+	}
+	
+	.inspirational-center div:first-child{
+		width: 70%;
+		height: 90%;
+		left: 15%;
+		top: 10%;
+		color: #FFFFFF;
+		text-align: center;
+		position: relative;
+		overflow-y: hidden;
+	}
+	
+	.inspirational-center div:first-child h4{
+		letter-spacing: .3rem;
+		font-size: 14px;
+		font-family: '微软雅黑', sans-serif;
+		line-height: 2rem;
+	}
+	.inspirational-center div:first-child p{
+		margin-top: 2rem;
+		margin-bottom: 3rem;
+		letter-spacing: .3rem;
+		font-size: 10px;
+		font-family: 'Quicksand', sans-serif;
+	}
+	
+	.carousel-indicators-bgimg li{
+		background-color: rgba(0,0,0,0);
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-image: url(../../../images/lunbo/sprite.png);
+		background-position: 16px;
+		cursor: pointer;
+	}
+	
+	.carousel-item footer{
+		margin-right: 2rem;
+	}
+	
+	.card{
+		width: 70%;
+		margin: 5% 15%;
+  		border: 1px solid #CDC9C9;
+		transition:all .2s linear;
+		 -moz-transition: all .2s linear;
+ 		  -webkit-transition: all .2s linear;
+  		   -ms-transition: all .2s linear;
+	}
+	
+	.card img{
+		width: 100%;
+	}
+	
+	.card:hover{
+		border: none;
+		transform:scale(1.05);
+		 -moz-transform:scale(1.05);
+ 		  -webkit-transform:scale(1.05);
+  		   -ms-transform:scale(1.05);
+  		box-shadow: 0 0 30px #00C6D7;
+ 		 -webkit-box-shadow: 0 0 30px #00C6D7;
+	}
+	
+	.sign>h2, #adl>h2, #inbox>h2{
+		margin: 4rem 0;
+		color: #BA55D3;
+		text-align: center;
+		letter-spacing: .5rem;
+		font-size: 40px;
+		font-family: '微软雅黑', sans-serif;
+	}
+	
+	.media{
+		height: 5.3rem;
+		margin-top: 2rem;
+		overflow: hidden;
+	}
+	
+	.media img{
+		width: 5rem;
+		height: 5rem;
+	}
+	
+	#inbox{
+		margin-top: 4rem;
+		display: none;
+	}
+	
+	.inbox-check{
+		margin-top: 2.2rem;
+	}
+	
+	#adl{
+		display: none;
+	}
+	
+	.adl-message{
+		margin-top: 4rem;
+		width: 100%;
+		height: 960px;
+	}
+	
+	.from-right, .from-left{
+		width: 100%;
+		padding: 1rem 2rem;
+	}
+	
+	.from-group textarea{
+		width: 100%;
+		height: 5rem;
+		padding: .2rem .5rem;
+	}
+	
+	#stuSubmit {
+		position: relative;
+		left: 90%;
+		bottom: -5.5rem;
+	}
+	
+	#staticBackdrop {
+		top: 30%;
+	}
+	
+	.about {
+		height: 500px;
+		width: 100%;
+		padding-top: 5rem;
+		background: url(../../../images/about/about.jpg) no-repeat fixed;
+		background-size: cover;
+		 -moz-background-size: cover;
+ 		  -webkit-background-size: cover;
+  		   -ms-background-size: cover;
+	}
+	
+	.about > h2 {
+		color: #BA55D3;
+		font-size: 30px;
+		text-align: center;
+		letter-spacing: 5px;
+		margin-bottom: 2rem;
+	}
+	
+	.about > p {
+		width: 60%;
+		margin-left: 20%;
+		text-align: center;
+		color: #FFFFFF;
+		letter-spacing: .1rem;
+	}
+	
+	
+	
+	.all-about{
+		width: 70%;
+		margin-left: 15%;
+		padding-top: 2rem;
+		border-top: 1px solid #656565;
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	.about-card{
+		width: 10%;
+	}
+	
+	.about-card > img {
+		width: 100%;
+	}
+	
+	.about-card > h4 {
+		margin-top: 1rem;
+		text-align: center;
+		color: #00C6D7;
+	}
+	
+	.contact {
+		width: 80%;
+		height: 35px;
+		margin-top: 2rem;
+		margin-left: 10%;
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	.contact > li {
+		display: inline-block;
+	}
+	
+	.contact > li > a > span {
+		display: block;
+		width: 24px;
+		height: 24px;
+		background-position: bottom;
+	}
+	
+	.contact > li > a > span:hover {
+		background-position: top;
+	}
+	
+	.inbox-all nav {
+		margin-top: 2rem;
+	}
+	
+	.all-team{
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+	
+	.team {
+		height: 500px;
+		width: 100%;
+		padding: 3rem 6rem;
+	}
+	
+	.team > h2 {
+		color: #BA55D3;
+		font-size: 40px;
+		text-align: center;
+		letter-spacing: 5px;
+		margin-bottom: 2rem;
+	}
+	
+	.team-card{
+		width: 100%;
+		margin: 5% 0;
+		height: 50%;
+		border: 1px solid #ccc;
+		transition:all .2s linear;
+		 -moz-transition: all .2s linear;
+ 		  -webkit-transition: all .2s linear;
+  		   -ms-transition: all .2s linear;
+	}
+	
+	.team-card:hover{
+		background-color: #ccc;
+	}
+	
+	.team-card > img {
+		width: 100%;
+	}
+	
+	.team-card > h4 {
+		color: #00C6D7;
+		font-size: 20px;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		letter-spacing: 0.2rem;
+	}
+	
+	
+	.team-card > p {
+		width: 80%;
+		height: 2.5rem;
+		color: #6c757d;
+		margin-left: 1rem;
+		font-size: 14px;
+		letter-spacing: 0.1rem;
+		overflow-y: hidden;
+	}
+	
+}
+
+@media screen and (min-width: 480px) and (max-width: 620px) {
+	
+	.inspirational-center div:first-child h4{
+		letter-spacing: .1rem!important;
+		font-size: 14px!important;
+	}
+	
+	.inspirational-center div:first-child p{
+		letter-spacing: .1rem!important;
+		font-size: 10px!important;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 820px) {
+	.card {
+		width: 40%!important;
+	}
+
+	.all-team{
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+
+	.team {
+		height: 500px;
+		width: 100%;
+		padding: 3rem 6rem;
+	}
+
+	.team > h2 {
+		color: #BA55D3;
+		font-size: 40px;
+		text-align: center;
+		letter-spacing: 5px;
+		margin-bottom: 2rem;
+	}
+
+	.team-card{
+		width: 45%;
+		margin: 5% 1.25%;
+		float: left;
+		height: 50%;
+		border: 1px solid #ccc;
+		transition:all .2s linear;
+		-moz-transition: all .2s linear;
+		-webkit-transition: all .2s linear;
+		-ms-transition: all .2s linear;
+	}
+
+	.team-card:hover{
+		background-color: #ccc;
+	}
+
+	.team-card > img {
+		width: 100%;
+	}
+
+	.team-card > h4 {
+		color: #00C6D7;
+		font-size: 20px;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		letter-spacing: 0.2rem;
+	}
+
+	.team-card > p {
+		width: 80%;
+		height: 2.5rem;
+		color: #6c757d;
+		margin-left: 1rem;
+		font-size: 14px;
+		letter-spacing: 0.1rem;
+		overflow-y: hidden;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	.icon-bar {
+		width: 1.5em;
+		height: 2px;
+		background-color: #CCCCCC;
+		display: block;
+		margin: 5px 10%;
+	}
+	
+	.navbar-toggle:hover, .navbar-toggle:focus {
+		background-color: #F164B2;
+	}
+	
+	.navbar-toggle {
+		margin-top: 1rem;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		width: 2em;
+		height: 2em;
+		background-color: rgba(0,0,0,0);
+		border: 1px solid #CCCCCC;
+		border-radius: 3px;
+	}
+	
+	#nav-menu li a {
+		color: #CCCCCC!important;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 990px) {
+	.banner{
+		width: 100%;
+		height: 500px!important;
+	}
+	
+	.carousel-item img {
+		width: 100%;
+		height: 500px!important;
+	}
+	
+	.inspirational {
+		width: 100%;
+		height: 700px;
+	}
+	
+	.inspirational-left {
+		width: 40%;
+		height: 350px;
+		float: left;
+	}
+	
+	.inspirational-left img {
+		width: 100%;
+		height: 350px;
+	}
+	
+	.inspirational-center {
+		width: 60%;
+		height: 350px;
+		float: left;
+		background-color: #404040;
+	}
+	
+	.inspirational-right{
+		width: 100%;
+		height: 350px;
+		float: left;
+		background-color: pink;
+	}
+	
+	.inspirational-right img:first-child{
+		width: 20%;
+		height: 40%;
+		margin-left: 40%;
+		margin-top: 2%;
+	}
+	
+	.inspirational-center div:first-child{
+		width: 70%;
+		height: 90%;
+		left: 15%;
+		top: 10%;
+		color: #FFFFFF;
+		text-align: center;
+		position: relative;
+		overflow-y: hidden;
+	}
+	
+	.inspirational-center div:first-child h4{
+		letter-spacing: .3rem;
+		font-size: 27px;
+		font-family: '微软雅黑', sans-serif;
+		line-height: 3rem;
+	}
+	.inspirational-center div:first-child p{
+		margin-top: 2rem;
+		margin-bottom: 3rem;
+		letter-spacing: .3rem;
+		font-size: 16px;
+		font-family: 'Quicksand', sans-serif;
+	}
+	
+	.carousel-indicators-bgimg li{
+		background-color: rgba(0,0,0,0);
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-image: url(../../../images/lunbo/sprite.png);
+		background-position: 16px;
+		cursor: pointer;
+	}
+	
+}
+
+
+
+@media screen and (min-width: 820px){
+	.all-team{
+		width: 100%;
+		margin-bottom: 3rem;
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	.team {
+		height: 500px;
+		width: 100%;
+		padding: 3rem 6rem;
+	}
+	
+	.team > h2 {
+		color: #BA55D3;
+		font-size: 40px;
+		text-align: center;
+		letter-spacing: 5px;
+		margin-bottom: 2rem;
+	}
+	
+	.team-card{
+		width: 18%;
+		height: 50%;
+		border: 1px solid #ccc;
+		transition:all .2s linear;
+		 -moz-transition: all .2s linear;
+ 		  -webkit-transition: all .2s linear;
+  		   -ms-transition: all .2s linear;
+	}
+	
+	.team-card:hover{
+		background-color: #ccc;
+	}
+	
+	.team-card > img {
+		width: 100%;
+	}
+	
+	.team-card > h4 {
+		color: #00C6D7;
+		font-size: 20px;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		letter-spacing: 0.2rem;
+	}
+	
+	
+	.team-card > p {
+		width: 80%;
+		height: 2.5rem;
+		color: #6c757d;
+		margin-left: 1rem;
+		font-size: 14px;
+		letter-spacing: 0.1rem;
+		overflow-y: hidden;
+	}
+}
+
+@media screen and (min-width: 990px) {
+	.banner {
+		width: 100%;
+		height: 700px!important;
+	}
+	
+	.carousel-item img {
+		width: 100%;
+		height: 700px!important;
+	}
+	
+	.inspirational{
+		height: 400px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.inspirational-left{
+		width: 25%;
+		height: 400px;
+	}
+	
+	.inspirational-left img{
+		width: 100%;
+		height: 100%;
+	}
+	
+	.inspirational-center{
+		width: 50%;
+		height: 400px;
+		background-color: #404040;
+	}
+	
+	.inspirational-right{
+		width: 25%;
+		height: 400px;
+		background: pink;
+	}
+	
+	.inspirational-right img:first-child{
+		width: 40%;
+		height: 40%;
+		margin-left: 30%;
+		margin-top: 5%;
+	}
+	
+	.inspirational-center div:first-child{
+		width: 70%;
+		height: 90%;
+		left: 15%;
+		top: 10%;
+		color: #FFFFFF;
+		text-align: center;
+		position: relative;
+		overflow-y: hidden;
+	}
+	
+	.inspirational-center div:first-child h4{
+		letter-spacing: .3rem;
+		font-size: 30px;
+		font-family: '微软雅黑', sans-serif;
+		line-height: 3rem;
+	}
+	.inspirational-center div:first-child p{
+		margin-top: 2rem;
+		margin-bottom: 3rem;
+		letter-spacing: .3rem;
+		font-size: 18px;
+		font-family: 'Quicksand', sans-serif;
+	}
+	
+	.carousel-indicators-bgimg li{
+		background-color: rgba(0,0,0,0);
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-image: url(../../../images/lunbo/sprite.png);
+		background-position: 16px;
+		cursor: pointer;
+	}
+	
+}
+
+@media screen and (min-width:480px) {
+	.banner{
+		width: 100%;
+		height: 400px;
+	}
+	
+	.carousel-item img {
+		width: 100%;
+		height: 400px;
+	}
+	
+	.navbar-image{
+		width: 64px;
+		height: 64px;
+		margin: 0 1rem;
+	}
+	
+	.nav-color{
+		color: #FFFFFF;
+		font-size: 35px;
+	}
+	
+	.navbar-nav li {
+		margin: 0 2px;
+	}
+
+	.active {
+		background-color: #BA55D3;
+	}
+
+	#navbarSupportedContent {
+		margin-right: 10rem;
+	}
+
+	#navbarSupportedContent,#navbarSupportedContent ul,#navbarSupportedContent ul li a {
+		height: 6rem;
+	}
+
+	#navbarSupportedContent ul li a {
+		padding: 3rem 2rem 2rem 2rem;
+		text-align: center;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-moz-osx-font-smoothing: grayscale;
+		position: relative;
+		-webkit-transition-property: color;
+		transition-property: color;
+		-webkit-transition-duration: 0.5s;
+		transition-duration: 0.5s;
+		background: none;
+		color: #fff;
+	}
+
+	#navbarSupportedContent ul li a:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #BA55D3;
+		-webkit-transform: scaleY(0);
+		transform: scaleY(0);
+		-webkit-transform-origin: 50% 0;
+		transform-origin: 50% 0;
+		-webkit-transition-property: transform;
+		transition-property: transform;
+		-webkit-transition-duration: 0.5s;
+		transition-duration: 0.5s;
+		-webkit-transition-timing-function: ease-out;
+		transition-timing-function: ease-out;
+	}
+
+	#navbarSupportedContent ul li a:hover,#navbarSupportedContent ul li a:focus,#navbarSupportedContent ul li a:active {
+		color: white;
+	}
+
+	#navbarSupportedContent ul li a:hover:before,#navbarSupportedContent ul li a:focus:before,#navbarSupportedContent ul li a:active:before {
+		-webkit-transform: scaleY(1);
+		transform: scaleY(1);
+		-webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+		transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+	}
+
+	#navbarSupportedContent ul li a:hover {
+		background-color: rgba(0,0,0,0)!important;
+	}
+	
+	.carousel-item footer{
+		margin-right: 3rem;
+	}
+	
+	.sign>h2, #adl>h2, #inbox>h2{
+		margin: 4rem 0;
+		color: #BA55D3;
+		text-align: center;
+		letter-spacing: .5rem;
+		font-size: 40px;
+		font-family: '微软雅黑', sans-serif;
+	}
+	
+	.card{
+		width: 28%;
+		margin: 0 1rem 2rem 1rem;
+  		border: 1px solid #CDC9C9;
+		transition:all .2s linear;
+		 -moz-transition: all .2s linear;
+ 		  -webkit-transition: all .2s linear;
+  		   -ms-transition: all .2s linear;
+	}
+	
+	.card img{
+		width: 100%;
+	}
+	
+	.card:hover{
+		border: none;
+		transform:scale(1.1);
+		 -moz-transform:scale(1.1);
+ 		  -webkit-transform:scale(1.1);
+  		   -ms-transform:scale(1.1);
+  		box-shadow: 0 0 30px #00C6D7;
+ 		 -webkit-box-shadow: 0 0 30px #00C6D7;
+	}
+	
+	.media{
+		height: 5.3rem;
+		margin-top: 2rem;
+		overflow: hidden;
+	}
+	
+	.media img{
+		width: 5rem;
+		height: 5rem;
+	}
+	
+	#inbox{
+		margin-top: 4rem;
+		display: none;
+	}
+	
+	.inbox-check{
+		margin-top: 2.2rem;
+	}
+	
+	#adl{
+		display: none;
+	}
+	
+	.adl-message{
+		margin-top: 4rem;
+		width: 100%;
+		height: 480px;
+	}
+	
+	.from-left{
+		width: 50%;
+		float: left;
+		padding: 1rem 2rem;
+	}
+	
+	.from-right{
+		width: 50%;
+		float: right;
+		padding: 1rem 2rem;
+	}
+	
+	.from-group textarea{
+		width: 100%;
+		height: 5rem;
+		padding: .2rem .5rem;
+	}
+	
+	#stuSubmit {
+		position: relative;
+		left: 90%;
+		bottom: -5.5rem;
+	}
+	
+	#staticBackdrop {
+		top: 30%;
+	}
+	
+	.about {
+		height: 500px;
+		width: 100%;
+		padding-top: 5rem;
+		background: url(../../../images/about/about.jpg) no-repeat fixed;
+		background-size: cover;
+		 -moz-background-size: cover;
+ 		  -webkit-background-size: cover;
+  		   -ms-background-size: cover;
+	}
+	
+	.about > h2 {
+		color: #BA55D3;
+		font-size: 40px;
+		text-align: center;
+		letter-spacing: 5px;
+		margin-bottom: 2rem;
+	}
+	
+	.about > p {
+		width: 60%;
+		margin-left: 20%;
+		text-align: center;
+		color: #FFFFFF;
+		letter-spacing: .1rem;
+	}
+	
+	
+	
+	.all-about{
+		width: 70%;
+		margin-left: 15%;
+		padding-top: 2rem;
+		border-top: 1px solid #656565;
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	.about-card{
+		width: 10%;
+	}
+	
+	.about-card > img {
+		width: 100%;
+	}
+	
+	.about-card > h4 {
+		margin-top: 1rem;
+		text-align: center;
+		color: #00C6D7;
+	}
+	
+	.contact {
+		width: 80%;
+		height: 35px;
+		margin-top: 2rem;
+		margin-left: 10%;
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	.contact > li {
+		display: inline-block;
+	}
+	
+	.contact > li > a > span {
+		display: block;
+		width: 24px;
+		height: 24px;
+		background-position: bottom;
+	}
+	
+	.contact > li > a > span:hover {
+		background-position: top;
+	}
+	
+	.inbox-all nav {
+		margin-top: 2rem;
+	}
+	
+}
+
+
+li {
+	list-style: none;
+}
+
+.li-bk{
+	background-image: url(../../../images/contact/boke.png);
+}
+	
+.li-qq{
+	background-image: url(../../../images/contact/qq.png);
+}
+	
+.li-yx{
+	background-image: url(../../../images/contact/youxiang.png);
+}
+
+.dropdown-menu a{
+	cursor: pointer;
+}
+
+.all-student-use{
+	width: 100%;
+}
+
+.carousel-text {
+	bottom: 40%;
+}
+
+.carousel-text h2 {
+	color: #00C6D7;
+}
+
+.carousel-text p {
+	font-size: 20px;
+	color: #00C6D7;
+}
+
+.btn-outline-purple{
+	color: #00C6D7!important;
+	border-color: #00C6D7;
+}
+.btn-outline-purple:hover{
+	color: #FFFFFF!important;
+	background-color: #00C6D7;
+}
+
+#carouselExampleCaptions2{
+	width: 100%;
+	height: 60%;
+}
+
+.carousel-inner div{
+	background-color: rgba(0,0,0,0);
+}
+
+.carousel-indicators-bgimg li:hover,.carousel-indicators-bgimg li.active{
+	background-position: 0px;
+}
+
+.card-text {
+	font-size: 12px;
+	height: 2.52rem;
+	color: #6c757d;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.inbox-click {
+	border-bottom: 1px solid #CCCCCC;
+	cursor: pointer;
+}
+/*
+.personal-information {
+	width: 7%;
+	height: 30%;
+	background: red;
+	position: fixed;
+	top: 40%;
+	right: 1px;
+}
+
+.personal-information-me,.go {
+	width: 100%;
+	height: 50%;
+	background-color: #FFFFFF;
+	border: 1px solid #4E555B;
+}*/
+
+.go-top, .my-message {
+	display: none;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	right: 70px;
+	bottom: 50px;
+	font-family: 'iconfont';
+	font-size: 50px;
+	cursor: pointer;
+	transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-webkit-transition: all .1s linear;
+	-ms-transition: all .1s linear;
+}
+
+.go-top:hover, .my-message:hover {
+	color: #00C6D7;
+}
+
+#my-message {
+	display: block!important;
+	bottom: 110px!important;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+  <title>教师端</title>
+
+  <link rel="stylesheet" href="../modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../modules/ionicons/css/ionicons.min.css">
+
+  <link rel="stylesheet" href="../modules/summernote/summernote-lite.css">
+  <link rel="stylesheet" href="../modules/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../css/client/teacher/index.css">
+  <link rel="stylesheet" type="text/css" href="../modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
+  <link rel="stylesheet" href="../css/client/teacher/demo.css">
+  <link rel="stylesheet" type="text/css" href="../css/client/teacher/tea_inbox.css"/>
+</head>
+
+<body>
+	<div id="app">
+		<div class="main-wrapper">
+			<div class="navbar-bg"></div>
+			<nav class="navbar navbar-expand-lg main-navbar">
+				<form class="form-inline mr-auto">
+					<ul class="navbar-nav mr-3">
+						<li>
+							<a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a>
+						</li>
+					</ul>
+				</form>
+				<ul class="navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+							<i class="ion ion-android-person d-lg-none"></i>
+							<div class="d-sm-none d-lg-inline-block" id="helloTeacherName"></div>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a href="/personal" class="dropdown-item has-icon">
+								<i class="ion ion-android-person"></i> 个人中心
+							</a>
+							<a href="/exitTeacher" class="dropdown-item has-icon">
+								<i class="ion ion-log-out"></i> 退出
+							</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="main-sidebar">
+				<aside id="sidebar-wrapper">
+					<div class="sidebar-brand">
+						<a href="index.html">Attendance</a>
+					</div>
+					<div class="sidebar-user">
+						<div class="sidebar-user-picture">
+							<img id="teacherImg" alt="image" src="../images/dushu.jpg">
+						</div>
+						<div class="sidebar-user-details">
+							<div class="user-name" id="teacherName"></div>
+							<div class="user-role">teacher</div>
+						</div>
+					</div>
+					<ul class="sidebar-menu">
+						<li class="menu-header">首页</li>
+						<li>
+							<a href="/teacherIndex"><i class="ion ion-speedometer"></i><span>首页</span></a>
+						</li>
+						<li class="menu-header">菜单</li>
+						<li>
+							<a href="/teacherClass" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>课程中心</span></a>
+						</li>
+						<li class="active">
+							<a href="/teacherInbox" class="has-dropdown"><i class="ion ion-ios-bell-outline"></i><span>收件箱</span></a>
+						</li>
+						<li>
+							<a href="/teacherLeave" class="has-dropdown"><i class="ion ion-clipboard"></i><span>请假条</span></a>
+						</li>
+					</ul>
+        </aside>
+      </div>
+      <div class="main-content">
+        <section class="section">
+          <h1 class="section-header">
+            <div>收件箱</div>
+          </h1>
+          <div id="inbox-ul-page" class="container inbox-tea">
+
+			  <div class="row d-flex justify-content-center p-3">
+				  <nav aria-label="Page navigation example">
+					  <ul id="card-page" class="pagination"></ul>
+				  </nav>
+			  </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </div>
+
+   <script src="../js/plug/jquery-3.4.1.min.js"></script>
+  <script src="../js/plug/popper.js"></script>
+  <script src="../js/plug/tooltip.js"></script>
+  <script src="../modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../js/plug/jquery.nicescroll.min.js"></script>
+  <script src="../js/plug/scroll-up-bar.min.js"></script>
+  <script src="../js/plug/sa-functions.js"></script>
+  <script src="../js/plug/chart.min.js"></script>
+  <script src="../js/plug/summernote-lite.js"></script>
+  <script src="../js/work/client/teacher/tea_index.js"></script>
+	<script src="../js/work/client/teacher/tea_inbox.js"></script>
+  
+  <script src="../js/work/client/teacher/paging.js" type="text/javascript" charset="utf-8"></script>
+<script type="application/javascript">
+
+</script>
+</body>
+</html>

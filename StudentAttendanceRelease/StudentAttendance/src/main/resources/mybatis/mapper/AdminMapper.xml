@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sdp.dao.AdminDao">
+
+    <select id="selectSystemMapper" resultType="edu.sdp.vo.admin.Department">
+        select * from department;
+    </select>
+
+    <select id="selectClassMapper" resultType="edu.sdp.vo.admin.Dclass">
+        select * from class where department_id=#{userUid};
+    </select>
+
+    <select id="selectUserInformationMapper" resultType="edu.sdp.vo.admin.AdminUser">
+        select u.user_id,u.user_name,u.user_stunum,u.user_ques,u.user_answer,d.user_system,c.user_class,u.user_identity,u.user_number
+        from user u,class c,department d
+        <where>
+            and u.user_system=d.user_uid and u.user_class=c.class_id
+            <choose>
+                <when test="userType==0">
+                    <if test="userName!=''">
+                        and u.user_name=#{userName}
+                    </if>
+                    <if test="userType!=''">
+                        and u.user_jion=#{userType}
+                    </if>
+                    <if test="userSystem!=''">
+                        and u.user_system=#{userSystem}
+                    </if>
+                    <if test="userClass!=''">
+                        and u.user_class=#{userClass}
+                    </if>
+                </when>
+                <when test="userType!=0">
+                    and u.user_jion=#{userType}
+                    <if test="userName!=''">
+                        and u.user_name=#{userName}
+                    </if>
+                </when>
+            </choose>
+            LIMIT ${(num-1)*classNum},${classNum};
+        </where>
+    </select>
+
+    <select id="selectNumMapper" resultType="java.lang.Integer">
+        select count(*) from user u,class c,department d
+        <where>
+            and u.user_system=d.user_uid and u.user_class=c.class_id
+            <choose>
+                <when test="userType==0">
+                    <if test="userName!=''">
+                        and u.user_name=#{userName}
+                    </if>
+                    <if test="userType!=''">
+                        and u.user_jion=#{userType}
+                    </if>
+                    <if test="userSystem!=''">
+                        and u.user_system=#{userSystem}
+                    </if>
+                    <if test="userClass!=''">
+                        and u.user_class=#{userClass}
+                    </if>
+                </when>
+                <when test="userType!=0">
+                    and u.user_jion=#{userType}
+                    <if test="userName!=''">
+                        and u.user_name=#{userName}
+                    </if>
+                </when>
+            </choose>
+        </where>
+    </select>
+    
+    <insert id="createUserMapper">
+        insert into user (user_number,user_pass,user_jion,user_stunum,user_system,user_class,user_ques,user_answer,user_id,user_portrait)
+        values (#{userNumber},#{userPass},#{userJion},#{userStunum},#{userSystem},#{userClass},#{userQues},#{userAnswer},#{userId},#{userPortrait});
+    </insert>
+
+    <delete id="delectUserMapper">
+        delete from user where user_id=#{x};
+    </delete>
+
+    <update id="updateUserMapper">
+        update user set user_number=#{userNumber},
+                        user_name=#{userName},user_identity=#{userIdentity},
+                        user_stunum=#{userStunum},user_system=#{userSystem},
+                        user_class=#{userClass} ,user_ques=#{userQues},user_answer=#{userAnswer}
+                        where user_id=#{userId};
+    </update>
+
+    <select id="searchTeacherClassMapper" resultType="edu.sdp.vo.TeacherClass">
+        SELECT c.cls_name,c.cls,cls_date as date,c.cls_id,u.user_name,(SELECT COUNT(*) FROM myclass WHERE mcls_class=cls_id)-1 as num
+        FROM curriculum c,user u
+        <where>
+            and u.user_id=c.cls_ascription
+            <if test="className!=null">
+                and c.cls_name like #{className}
+            </if>
+            <if test="teacherName!=null">
+                and u.user_name like #{teacherName}
+            </if>
+        </where>
+        LIMIT ${(num-1)*classNum},${classNum};
+    </select>
+
+    <select id="selectTeacherClassNumMapper" resultType="java.lang.Integer">
+        SELECT count(*) FROM curriculum c,user u
+        <where>
+            and u.user_id=c.cls_ascription
+            <if test="className!=null">
+                and c.cls_name like #{className}
+            </if>
+            <if test="teacherName!=null">
+                and u.user_name like #{teacherName}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectTeacherMapper" resultType="edu.sdp.vo.admin.Teacher">
+        select user_name as teacherName,user_id as teacherId from user where user_jion=1;
+    </select>
+
+    <delete id="adminDeleteCurriculumMapper">
+        delete from curriculum where cls_id=#{clsId};
+    </delete>
+
+    <insert id="adminInsertCurriculumMapper">
+        insert into curriculum (cls_id,cls_name,cls_date,cls_ascription,cls,cls_photo)
+                    value (#{clsId},#{clsName},#{timeStamp},#{clsAscription},#{cls},#{clsPhoto})
+    </insert>
+    
+    <insert id="adminInsertMyclass">
+        insert into myclass (mcls_name,mcls_class) values (#{clsAscription},#{clsName});
+    </insert>
+
+    <update id="adminUpdateCurriculumMapper">
+        update curriculum set cls_name=#{clsName},cls=#{cls},cls_ascription=#{clsAscription}
+        where cls_id=#{clsId};
+    </update>
+
+    <delete id="adminDeleteMyclassMapper">
+        delete from myclass where mcls_class=#{clsId};
+    </delete>
+
+    <select id="adminLeaveInformationMapper" resultType="edu.sdp.vo.LeaveInformation">
+        select u.user_id,u.user_name,d.user_system,c.user_class,l.leave_time,l.leave_type,l.leave_reason,l.leave_state,l.leave_content as leaveCount,l.leave_id,l.leave_teacher
+        from user u,leaves l,department d,class c
+        <where>
+            and u.user_id=l.leave_student and u.user_system=d.user_uid and u.user_class=c.class_id
+            <if test="clsSystem!=''">
+                and u.user_system=#{clsSystem}
+            </if>
+            <if test="className!=''">
+                and u.user_class=#{className}
+            </if>
+            <if test="userName!=''">
+                and u.user_name like #{userName}
+            </if>
+        </where>
+        LIMIT ${(num-1)*classNum},${classNum};
+    </select>
+
+    <select id="adminLeaveInformationNumMapper" resultType="java.lang.Integer">
+        select count(*) from user u,leaves l,department d,class c
+        <where>
+            and u.user_id=l.leave_student and u.user_system=d.user_uid and u.user_class=c.class_id
+            <if test="clsSystem!=''">
+                and u.user_system=#{clsSystem}
+            </if>
+            <if test="className!=''">
+                and u.user_class=#{className}
+            </if>
+            <if test="userName!=''">
+                and u.user_name like #{userName}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectLeaveTeacherName" resultType="java.lang.String">
+        select user_name from user where user_id=#{leaveTeacher};
+    </select>
+
+    <delete id="adminDeleteLeaveInformationMapper">
+        delete from leaves where leave_id=#{x};
+    </delete>
+
+    <update id="adminUpdateLeaveInformationMapper">
+        update leaves
+        <trim prefix="set" suffixOverrides=",">
+            <if test="state=='通过'">
+                leave_state=1,
+            </if>
+            <if test="state=='不通过'">
+                leave_state=2,
+            </if>
+            leave_content=#{content}
+        </trim>
+        where leave_id=#{leaveId};
+    </update>
+
+    <select id="adminSelectSystemAndClassMapper" resultMap="systemAndClassMap">
+        select d.user_system as dsystem,d.user_uid as dId,c.user_class as cclass,c.class_id as cId,c.department_id as cdId
+        from department d,class c
+        <where>
+            and d.user_uid=c.department_id
+            <if test="system!=''">
+                and d.user_uid=#{system}
+            </if>
+            <if test="dclass!=null">
+                and c.class_id=#{dclass}
+            </if>
+        </where>
+        LIMIT ${(num-1)*classNum},${classNum};
+    </select>
+    <resultMap id="systemAndClassMap" type="edu.sdp.vo.admin.Department">
+        <result column="dsystem" property="userSystem"/>
+        <result column="dId" property="userUid"/>
+        <collection property="dclassList" ofType="edu.sdp.vo.admin.Dclass">
+            <result column="cId" property="classId"/>
+            <result column="cclass" property="userClass"/>
+            <result column="cdId" property="departmentId"/>
+        </collection>
+    </resultMap>
+
+    <select id="adminSelectSystemAndClassNumMapper" resultType="java.lang.Integer">
+        select count(*)
+        from department d,class c
+        <where>
+            and d.user_uid=c.department_id and d.user_uid !='444444' and d.user_uid !='55555'
+            <if test="system!=''">
+                and d.user_uid=#{system}
+            </if>
+            <if test="dclass!=null">
+                and c.class_id=#{dclass}
+            </if>
+        </where>
+    </select>
+
+    <update id="adminUpdateBeLongToSystemMapper">
+        update class set department_id=#{system} where class_id=#{dclass}
+    </update>
+
+    <insert id="adminInsertSystemMapper">
+        insert into department (user_system,user_uid) value (#{systemName},#{systemId})
+    </insert>
+
+    <insert id="adminInsertClassMapper">
+        insert into class (user_class,class_id,department_id) value (#{className},#{classId},#{systemId})
+    </insert>
+
+    <delete id="deleteSystemMapper">
+        delete from department where user_uid=#{x}
+    </delete>
+
+    <delete id="deleteSystemOnClassMapper">
+        delete from class where department_id=#{x}
+    </delete>
+
+    <delete id="delectClassMapper">
+        delete from class where class_id=#{x}
+    </delete>
+
+    <select id="selectUserNum" resultType="java.lang.Integer">
+        select count(*) from user
+    </select>
+    <select id="selectCurrNum" resultType="java.lang.Integer">
+        select count(*) from curriculum;
+    </select>
+
+    <select id="selectSignNum" resultType="java.lang.Integer">
+        select count(*) from signtask;
+    </select>
+    <select id="selectDepartNum" resultType="java.lang.Integer">
+        select count(*)from department;
+    </select>
+    <insert id="adminInsertNoticeMapper">
+        insert into notice (notice_content,notice_id,notice_time) value (#{content},#{noticeId},#{timeStamp})
+    </insert>
+
+    <select id="adminSelectNoticeMapper" resultType="edu.sdp.vo.admin.Notice">
+        select * from notice
+        <where>
+            <if test="content!=''">
+                and notice_content like #{content}
+            </if>
+        </where>
+        LIMIT ${(num-1)*classNum},${classNum};
+    </select>
+
+    <select id="teacherAndStudentNoticeMapper" resultType="edu.sdp.vo.admin.Notice">
+         select * from notice order By notice_time desc Limit 6;
+    </select>
+
+    <select id="selectNoticeNum" resultType="java.lang.Integer">
+        select count(*) from notice
+        <where>
+            <if test="content!=''">
+                and notice_content like #{content}
+            </if>
+        </where>
+    </select>
+
+    <delete id="adminDeleteNoticeMapper">
+        delete from notice where notice_id=#{x};
+    </delete>
+
+    <update id="adminUpdateMapper">
+        update notice set notice_content=#{content} where notice_id=#{noticeId};
+    </update>
+
+
+</mapper>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sdp.dao.LeaveDao">
+    <insert id="leaveMapper" parameterType="edu.sdp.vo.Leave">
+        insert into leaves (leave_teacher,leave_student,leave_time,leave_type,leave_reason,leave_id,leave_state)
+        values (#{leaveTeacher},#{leaveStudent},#{leaveTime},#{leaveType},#{leaveReason},#{leaveId},#{leaveState});
+    </insert>
+
+    <select id="searchStudentMapper" parameterType="String" resultType="edu.sdp.vo.Information">
+        select u.user_name,u.user_stunum,d.user_system,c.user_class from user u,department d,class c
+        where u.user_id=#{id} and d.user_uid=u.user_system and c.class_id=u.user_class;
+    </select>
+
+    <insert id="writeToInboxServiceMapper" parameterType="edu.sdp.vo.Inbox">
+        insert into inbox (inbox_from,inbox_addressee,inbox_date,inbox_content,inbox_state,inbox_id,inbox_type)
+        value (#{inboxFrom},#{inboxAddressee},#{inboxDate},#{inboxContent},#{inboxState},#{inboxId},#{inboxType});
+    </insert>
+
+    <select id="studentLeaveInformationMapper" resultType="edu.sdp.vo.LeaveInformation">
+        select u.user_stunum,u.user_name,d.user_system,c.user_class,l.leave_time,l.leave_reason,l.leave_content as leaveCount,l.leave_type,l.leave_id,u.user_id,l.leave_state
+        from leaves l,user u,department d ,class c
+        <where>
+            leave_teacher=#{id} and d.user_uid=u.user_system and c.class_id=u.user_class and l.leave_student=u.user_id
+            <if test="state==0">
+                and l.leave_state=#{state}
+            </if>
+            <if test="state==1">
+                and l.leave_state in(1 , 2)
+            </if>
+        </where>
+        LIMIT ${(num-1)*classNum},${classNum};
+    </select>
+
+    <select id="studentLeaveInformationNumMapper" resultType="java.lang.Integer">
+         select COUNT(*) from leaves
+         <where>
+             leave_teacher=#{id}
+             <if test="state==0">
+                 and leave_state=#{state};
+             </if>
+             <if test="state==1">
+                 and leave_state in(1 , 2);
+             </if>
+         </where>
+    </select>
+
+    <select id="selectLeaveInforation" resultType="edu.sdp.vo.Leave">
+        select * from leaves where leave_id=#{id};
+    </select>
+
+    <select id="selecetTeacehrName" resultType="java.lang.String">
+        select user_name from user where user_id=#{leaveTeacher}
+    </select>
+
+    <update id="ChangeLeaveStatusMapper">
+        update leaves set leave_state=#{state},leave_content=#{content} where leave_id=#{id}
+    </update>
+
+    <insert id="inbox">
+         insert into inbox (inbox_from,inbox_addressee,inbox_date,inbox_content,inbox_state,inbox_id,inbox_type)
+        value (#{leaveTeacher},#{userId},#{timestamp},#{s},#{s1},#{id},#{q});
+    </insert>
+</mapper>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>学生端</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset/font.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/client/student/student.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/client/font-awesome.css"/>
+		<script src="../js/plug/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/plug/wow.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new WOW().init();
+		</script>
+	</head>
+	<body>
+		<div class="banner" id="banner">
+			<!--
+		 		作者：ShineQianMo
+		 		时间：2020-05-23
+		 		描述：导航
+		   	-->
+			<nav class="navbar navbar-expand-lg fixed-top wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
+				<img class="navbar-image" src="../images/icon.png"/>
+				<a id="pname" class="navbar-brand nav-color" href="/index">Attendance</a>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarSupportedContent">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse nav-wil" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto"  id="nav-menu">
+						<li class="nav-item active">
+							<a href="#banner" class="nav-link">首页</a>
+						</li>
+						<li class="nav-item">
+							<a href="#sign" class="nav-link">签到</a>
+						</li>
+						<li class="nav-item">
+							<a href="#inbox" class="nav-link">收件箱</a>
+						</li>
+						<li class="nav-item">
+							<a href="#adl" class="nav-link">请假</a>
+						</li>
+						<li class="nav-item">
+							<a href="/realname" class="nav-link">实名认证</a>
+						</li>
+						<li class="nav-item">
+							<a href="#about" class="nav-link">关于</a>
+						</li>
+						<li class="nav-item">
+							<a href="#team" class="nav-link">我们</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!--
+		 		作者：ShineQianMo
+		 		时间：2020-05-23
+		 		描述：轮播
+		   	-->
+			<div class="carousel">
+				<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+						<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="../images/lunbo/qiandao.jpg" class="d-block w-100" alt="...">
+							<div class="carousel-caption d-none d-md-block carousel-text wow bounceInDown" data-wow-duration="1.5s">
+								<h2>今天你签到了吗</h2>
+								<p>Did you check in today</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="../images/lunbo/zuoye.jpg" class="d-block w-100" alt="...">
+							<div class="carousel-caption d-none d-md-block carousel-text wow bounceInDown" data-wow-duration="1.5s">
+								<h2>今天你交作业了吗</h2>
+								<p>Did you hand in your homework today</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="../images/lunbo/youjian.jpg" class="d-block w-100" alt="...">
+							<div class="carousel-caption d-none d-md-block carousel-text wow bounceInDown" data-wow-duration="1.5s">
+								<h2>今天你看邮件了吗</h2>
+								<p>Did you check your email today</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+		 	作者：ShineQianMo
+		 	时间：2020-05-23
+		 	描述：励志语
+		-->
+		<div class="inspirational">
+			<div class="inspirational-left wow rotateInDownLeft" data-wow-duration="1.5s" data-wow-delay="0.3s">
+				<img src="../images/dushu.jpg" />
+			</div>
+			<div class="inspirational-center wow slideInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
+				<div>
+					<h4>积极的人在每一次忧患中都看到机会而消极的人则在每一次机会中都看到某种忧患</h4>
+					<p>Let's seize the opportunity</p>
+					<a id="zzjh" class="btn btn-outline-purple" href="#sign">抓&nbsp;住&nbsp;机&nbsp;会</a>
+				</div>
+			</div>
+
+			<div class="inspirational-right wow rotateInDownRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
+				<img src="../images/gonggao.gif" />
+				<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">
+					<ul id="announcementUl" class="carousel-indicators carousel-indicators-bgimg"></ul>
+					<div id="announcementAll" class="carousel-inner text-center"></div>
+				</div>
+			</div>
+		</div>
+		<div class="all-student-use">
+			<!--
+					 	作者：ShineQianMo
+					 	时间：2020-05-23
+					 	描述：签到
+					-->
+			<div class="container sign" id="sign">
+				<h2>签到<span><a class="btn btn-outline-purple" data-toggle="modal" data-target="#exampleModalScrollable2"><i class="fa fa-plus-circle" aria-hidden="true"></i>加入课程</a></span></h2>
+				<div id="sign-card" class="row wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0s">
+					
+				</div>
+				<nav aria-label="Page navigation example">
+					<ul id="card-page" class="pagination justify-content-center">
+
+					</ul>
+				</nav>
+			</div>
+			<!--
+					 	作者：ShineQianMo
+					 	时间：2020-05-23
+					 	描述：收件箱
+					-->
+			<div class="inbox wow fadeIn" id="inbox">
+				<h2>收件箱</h2>
+				<div class="container container-ad">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="请输入要查询的关键字" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+						<div class="input-group-append" id="button-addon4">
+							<button class="btn btn-outline-secondary" type="button">查询</button>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn dropdown-toggle btn-outline-secondary btn-border" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    分类
+									  </button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">考勤</a>
+								<a class="dropdown-item" href="#">作业</a>
+								<a class="dropdown-item" href="#">请假</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">全部</a>
+							</div>
+						</div>
+					</div>
+				
+					<div class="container-fluid inbox-all" id="inbox-media-all">
+
+						<nav aria-label="Page navigation example" id="inbox-ul-page">
+							<ul class="pagination justify-content-center" id="stu-inbox">
+
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!--
+					 	作者：ShineQianMo
+					 	时间：2020-05-23
+					 	描述：请假
+					-->
+			<div id="adl" class="container container-ad wow fadeIn">
+				<h2>请假</h2>
+				<div class="adl-message">
+					<form>
+						<div class="from-left">
+							<div class="form-group">
+								<label for="stuName">姓名:</label>
+								<input readonly="true" type="text" class="form-control text-black" id="stuName" aria-describedby="stuNameHelp" placeholder="如：张三">
+							</div>
+							<div class="form-group">
+								<label for="stuNumber">学号:</label>
+								<input readonly="true" type="text" class="form-control text-black" id="stuNumber" placeholder="如：201804113xxx">
+							</div>
+							<div class="form-group">
+								<label for="stuDepartment">系别:</label>
+								<input readonly="true" type="text" class="form-control text-black" id="stuDepartment" placeholder="如：信息工程系">
+							</div>
+							<div class="form-group">
+								<label for="stuClass">班级:</label>
+								<input readonly="true" type="text" class="form-control text-black" id="stuClass" placeholder="如：软件1831">
+							</div>
+							<div class="form-group">
+								<label for="stuTime">时长:</label>
+								<input type="text" class="form-control text-black" id="stuTime" placeholder="如：一天或者2个小时">
+							</div>
+						</div>
+						<div class="from-right">
+							<div class="form-group">
+								<label for="stuType">指导老师:</label><br />
+								<div class="btn-group btn-align-left" id="btn-stuType">
+									<button id="clsName-btn" type="button" class="btn dropdown-toggle btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+									<div id="clsName" class="dropdown-menu">
+
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="stuType">类型:</label><br />
+								<div class="btn-group btn-align-left" id="btn-stuTypee">
+									<button type="button" class="btn dropdown-toggle btn-outline-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">病假</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item">病假</a>
+										<a class="dropdown-item">事假</a>
+										<a class="dropdown-item">其他</a>
+									</div>
+								</div>
+							</div>
+							<div class="from-group">
+								<label for="stuCause">原因:</label>
+								<br />
+								<textarea id="leave_reasan" placeholder="请输入您的原因"></textarea>
+							</div>
+							<button id="stuSubmit" type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#staticBackdrop1">提交</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<br />
+		<!--
+		            	作者：ShineQianMo
+		            	时间：2020-05-27
+		            	描述：关于
+		            -->
+		<div id="about" class="about">
+			<h2>关于</h2>
+			<p>这是一个什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统什么么么样的系统</p>
+			<div class="all-about">
+				<div class="about-card">
+					<img src="../images/about/chuangxin.png"/>
+					<h4>创新</h4>
+				</div>
+				<div class="about-card">
+					<img src="../images/about/student.png"/>
+					<h4>学生</h4>
+				</div>
+				<div class="about-card">
+					<img src="../images/about/teacher.png"/>
+					<h4>老师</h4>
+				</div>
+				<div class="about-card">
+					<img src="../images/about/xuexi.png"/>
+					<h4>资源</h4>
+				</div>
+			</div>
+		</div>
+		<!--
+		            	作者：ShineQianMo
+		            	时间：2020-05-26
+		            	描述：团队
+		            -->
+		<div id="team" class="team">
+			<h2>团队</h2>
+			<div class="all-team">
+				<div class="team-card">
+					<img src="../images/about/ui-Jiang.jpg"/>
+					<h4>姜海岚</h4>
+					<p>团队指导老师，人非要经历一番不同平时的劫难才能脱胎换骨,成为真正能解决问题的人。</p>
+					<ul class="contact">
+						<li><a href="https://blog.csdn.net/Shine_QianMo" target="_blank"><span class="li-bk"></span></a></li>
+						<li><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=240661099&website=www.oicqzone.com"><span class="li-qq"></span></a></li>
+						<li><a href="mailto:shineqianmo@163.com"><span class="li-yx"></span></a></li>
+					</ul>
+				</div>
+				<div class="team-card">
+					<img src="../images/about/ui-Chen.jpg"/>
+					<h4>陈斌</h4>
+					<p>生活比电影狠多了,从来不给弱者安排大逆转的情节。</p>
+					<ul class="contact">
+						<li><a href="https://blog.csdn.net/Shine_QianMo" target="_blank"><span class="li-bk"></span></a></li>
+						<li><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=240661099&website=www.oicqzone.com"><span class="li-qq"></span></a></li>
+						<li><a href="mailto:shineqianmo@163.com"><span class="li-yx"></span></a></li>
+					</ul>
+				</div>
+				<div class="team-card">
+					<img src="../images/about/ui-Wang.jpg"/>
+					<h4>王晨茜</h4>
+					<p>务须咬牙厉志,蓄其气而长其志,切不可恭然自馁也</p>
+					<ul class="contact">
+						<li><a href="https://blog.csdn.net/Shine_QianMo" target="_blank"><span class="li-bk"></span></a></li>
+						<li><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1494033457&website=www.oicqzone.com"><span class="li-qq"></span></a></li>
+						<li><a href="mailto:wangchenxi0406@qq.com"><span class="li-yx"></span></a></li>
+					</ul>
+				</div>
+				<div class="team-card">
+					<img src="../images/about/ui-Ye.jpg"/>
+					<h4>叶强</h4>
+					<p>不肯下一点功夫，永远不会明白自己从何而来，又将立足于何处。</p>
+					<ul class="contact">
+						<li><a href="http://ytu-str.gitee.io/ytu-str/" target="_blank"><span class="li-bk"></span></a></li>
+						<li><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1466779249&website=www.oicqzone.com"><span class="li-qq"></span></a></li>
+						<li><a href="mailto:1466779249@qq.com"><span class="li-yx"></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--
+		            	作者：ShineQianMo
+		            	时间：2020-05-26
+		            	描述：模态框
+		            -->
+		<div class="modal fade" id="staticBackdrop1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">提交</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					</div>
+					<div class="modal-body">
+						您确定要提交吗？
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary" id="leave">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+		            	作者：ShineQianMo
+		            	时间：2020-05-26
+		            	描述：签到模态框
+		            -->
+		            <div class="modal fade" id="exampleModalScrollable1" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+		            	<div class="modal-dialog modal-dialog-scrollable" role="document">
+		            		<div class="modal-content">
+								<div align="center">
+									<p id="flag" class="tishi"></p>
+								</div>
+		            			<div class="modal-header">
+		            				<h5 class="modal-title" id="exampleModalScrollableTitle">签到</h5>
+		            				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                      <span aria-hidden="true">&times;</span>
+		                    </button>
+		            			</div>
+		            			<div class="modal-body">
+		            				<video id="video" width="100%" height="320" autoplay></video>
+            						<canvas id="canvas" width="500" height="500" style="display: none;"></canvas>
+									<img id="imgTag" src="" alt="imgTag" style="display: none;">
+		            			</div>
+		            			<div class="modal-footer">
+		            				<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+		            				<button id="sign-sign" type="button" class="btn btn-primary">签到</button>
+		            			</div>
+		            		</div>
+		            	</div>
+		            </div>
+		<!--
+		            	作者：ShineQianMo
+		            	时间：2020-05-26
+		            	描述：加入班级模态框
+		            -->
+		            <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle2" aria-hidden="true">
+		            	<div class="modal-dialog modal-dialog-scrollable" role="document">
+		            		<div class="modal-content">
+		            			<div class="modal-header">
+		            				<h5 class="modal-title" id="exampleModalScrollableTitle2">加入班级</h5>
+		            				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                      <span aria-hidden="true" class="close_photo">&times;</span>
+		                    </button>
+		            			</div>
+		            			<div class="modal-body">
+		            				<label for="stuDepartment">加入的班级编号:</label>
+		            				<input type="text" class="form-control" id="clsNumber" placeholder="如：efd804113xxx">
+		            			</div>
+		            			<div class="modal-footer">
+		            				<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+		            				<button id="add-class-btn" type="button" class="btn btn-primary">确定</button>
+		            			</div>
+		            		</div>
+		            	</div>
+		            </div>
+		<!--
+		            	作者：ShineQianMo
+		            	时间：2020-05-27
+		            	描述：回到顶部
+		            -->
+		<div class="go-top">&#xe61c;</div>
+		<div id="my-message" class="my-message">&#xe603;</div>
+		<script src="../js/plug/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/work/client/student/access_anchor.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/work/client/student/sign.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/work/client/student/student.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/work/client/teacher/paging.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/work/client/student/stu-inbox.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			searchStudent();
+		</script>
+</body>
+</html>
